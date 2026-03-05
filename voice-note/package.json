@@ -1,0 +1,60 @@
+{
+  "$schema": "https://www.raycast.com/schemas/extension.json",
+  "name": "voice-note",
+  "title": "voice note",
+  "description": "real-time voice transcription with ai post-processing",
+  "icon": "command-icon.png",
+  "author": "ko",
+  "categories": [
+    "Productivity"
+  ],
+  "license": "MIT",
+  "commands": [
+    {
+      "name": "voice-note",
+      "title": "voice note",
+      "description": "record and transcribe voice with whisper",
+      "mode": "view",
+      "icon": "command-icon.png"
+    }
+  ],
+  "preferences": [
+    {
+      "name": "whisperModel",
+      "title": "whisper model path",
+      "description": "path to ggml whisper model file",
+      "type": "textfield",
+      "required": false,
+      "default": "/Users/kokayi/Library/Application Support/superwhisper/ggml-small.bin"
+    },
+    {
+      "name": "ollamaModel",
+      "title": "ollama model",
+      "description": "ollama model for post-processing",
+      "type": "textfield",
+      "required": false,
+      "default": "kimi-k2.5:cloud"
+    }
+  ],
+  "dependencies": {
+    "@raycast/api": "^1.93.3",
+    "@raycast/utils": "^1.19.1"
+  },
+  "devDependencies": {
+    "@raycast/eslint-config": "^1.0.11",
+    "@types/node": "22.13.14",
+    "@types/react": "19.0.12",
+    "eslint": "^9.23.0",
+    "prettier": "^3.5.3",
+    "typescript": "^5.8.2",
+    "react": "^19.0.0"
+  },
+  "scripts": {
+    "build": "ray build",
+    "dev": "ray develop",
+    "fix-lint": "ray lint --fix",
+    "lint": "ray lint",
+    "prepublishOnly": "echo \"Error: no publish\" && exit 1",
+    "publish": "npx @raycast/api@latest publish"
+  }
+}
